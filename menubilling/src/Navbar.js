@@ -8,6 +8,7 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/menu">Menu</CustomLink>
+        <CustomLink to="/myorder">Cart</CustomLink>
       </ul>
     </nav>
   );
