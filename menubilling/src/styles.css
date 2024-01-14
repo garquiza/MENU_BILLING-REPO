@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 1rem;
+    text-align: center;
+}
+
+.nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.site-title {
+    font-size: 2rem;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+.nav li.active {
+    background-color: #555;
+}
+
+.nav li:hover {
+    background-color: #777;
+}
+
+/* HOME PAGE STYLE */
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    width: 80%;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-content {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* MENU ITEMS */
+.menu-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.menu-item {
+    margin: 10px;
+    text-align: center;
+}
+
+.menu-image {
+    width: 300px;
+    height: 300px;
+}
+
+/* .view-details-button {
+} */
+
+.back-button {
+    position: fixed;
+    top: 80px;
+    left: 30px;
+}
