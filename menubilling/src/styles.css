@@ -43,8 +43,10 @@ body {
     text-align: center;
 }
 
+/*Navigation Bar */
 .nav {
-    background-color: #333;
+    background: rgb(8,255,241);
+    background: radial-gradient(circle, rgba(8,255,241,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(222,252,243,1) 0%, rgba(57,255,242,1) 59%);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -80,6 +82,47 @@ body {
 
 .nav li:hover {
     background-color: #777;
+}
+
+.header {
+  background: #010103;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 7%;
+  border-bottom: 0.2rem solid #73c2e1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo img {
+  max-width: 75px;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.header .navbar a:hover {
+  color: #73c2e1;
+  border-bottom: 0.1rem solid #73c2e1;
+  padding-bottom: 0.5rem;
+}
+
+.header .icons div {
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.header .icons div:hover {
+  color: #73c2e1;
 }
 
 /* HOME PAGE STYLE */
@@ -135,10 +178,38 @@ img {
 /* .view-details-button {
 } */
 
+.view-details-button {
+    position: fixed;
+    top: 80px;
+    left: 30px;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+}
+
+.view-details-button:hover {
+    letter-spacing: 0.2rem;
+}
+
 .back-button {
     position: fixed;
     top: 80px;
     left: 30px;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+    }
+
+.back-button:hover {
+    letter-spacing: 0.2rem;
 }
 
 .btn {
@@ -147,7 +218,7 @@ img {
   padding: 0.9rem 3rem;
   font-size: 1.7rem;
   color: #fff;
-  background: #ffc107;
+  background: #000000;
   cursor: pointer;
 }
 

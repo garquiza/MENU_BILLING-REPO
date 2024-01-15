@@ -31,7 +31,7 @@ const Menu = () => {
       {/* BACK BUTTON */}
       <div className="back-button">
         <Link to="/">
-          <button>Back</button>
+          <button className="back-button">Back</button>
         </Link>
       </div>
     </div>
