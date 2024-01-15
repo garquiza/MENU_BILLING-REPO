@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import PizzaImg from "../images/pizza.png";
 import PastaImg from "../images/pasta.png";
 import BurgerImg from "../images/burger.png";
@@ -10,6 +9,7 @@ import MyOrder from "./MyOrder";
 
 const Menu = () => {
   const [selectedItems, setSelectedItems] = useState([]);
+  const [showMyOrder, setShowMyOrder] = useState(false);
 
   const addToOrder = (item) => {
     const existingItem = selectedItems.find(
@@ -44,6 +44,10 @@ const Menu = () => {
     setSelectedItems(updatedItems);
   };
 
+  const toggleMyOrder = () => {
+    setShowMyOrder(!showMyOrder);
+  };
+
   return (
     <div>
       <div className="menu-header">
@@ -71,19 +75,19 @@ const Menu = () => {
         ))}
       </div>
 
-      {/* VIEW MY ORDER BUTTON
+      {/* VIEW MY ORDER BUTTON */}
       <div className="view-order-button">
-        <Link to="/myorder">
-          <button>View My Order</button>
-        </Link>
-      </div> */}
+        <button onClick={toggleMyOrder}>View My Order</button>
+      </div>
 
       {/* MY ORDER COMPONENT */}
-      <MyOrder
-        selectedItems={selectedItems}
-        removeFromOrder={removeFromOrder}
-        updateQuantity={updateQuantity}
-      />
+      {showMyOrder && (
+        <MyOrder
+          selectedItems={selectedItems}
+          removeFromOrder={removeFromOrder}
+          updateQuantity={updateQuantity}
+        />
+      )}
     </div>
   );
 };
