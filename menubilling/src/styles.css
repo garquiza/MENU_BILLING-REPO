@@ -18,6 +18,8 @@
 
 body {
     margin: 0;
+background: rgb(76,231,233);
+background: linear-gradient(159deg, rgba(76,231,233,1) 31%, rgba(45,253,216,1) 54%, rgba(116,215,244,1) 69%);
 }
 
 .container {
@@ -67,7 +69,7 @@ body {
 }
 
 .header {
-  background: #010103;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -285,21 +287,22 @@ img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     width: 300px;
-    max-width: 100%; 
-    box-sizing: border-box; 
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .order-item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
+    background-color: #88cee5; /* Add a blue background color on hover */
 }
 
 .order-image {
     object-fit: cover;
     border-radius: 5px;
-    width: 100%; 
-    max-height: 200px; 
-    margin-bottom: 10px; 
+    width: 100%;
+    max-height: 200px;
+    margin-bottom: 10px;
 }
 
 .item-info {
@@ -383,4 +386,104 @@ img {
 
 .remove-button:hover {
     background-color: #c82333;
+}
+
+/* Payment Details*/
+
+.proceed-button {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.proceed-button  {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.proceed-button:hover {
+    background-color: #88cee5;
+    transform: scale(1.05); 
+}
+
+.payment-details {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  width: 80%;
+  max-width: 300px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.payment-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.discount-options {
+  margin-top: 15px;
+}
+
+.discount-options label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Payment Section Styles */
+.payment-section {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.input-cash {
+  width: 80%;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.complete-payment-button {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.complete-payment-button:hover {
+  background-color: #2980b9;
+}
+
+.change-amount {
+  margin-top: 15px;
 }
