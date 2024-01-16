@@ -7,11 +7,14 @@ const Navbar = () => {
   return (
     <>
       <header className="header">
-      
         <nav className="navbar" ref={navbarRef}>
-          <Link to="/">Home</Link>
-          <Link to="/menu">Menu</Link>
-
+          <div className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/menu">Menu</Link>
+          </div>
+          <div className="logo-container">
+            <img src="" alt="Logo" className="logo" />
+          </div>
         </nav>
       </header>
     </>
@@ -19,3 +22,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
@@ -14,58 +14,68 @@
   transition: 0.2s linear;
 }
 
-
-
 body {
-    margin: 0;
-background: rgb(76,231,233);
-background: linear-gradient(159deg, rgba(76,231,233,1) 31%, rgba(45,253,216,1) 54%, rgba(116,215,244,1) 69%);
+  margin: 0;
+  background: rgb(76, 231, 233);
+  background: linear-gradient(
+    159deg,
+    rgba(76, 231, 233, 1) 31%,
+    rgba(45, 253, 216, 1) 54%,
+    rgba(116, 215, 244, 1) 100%
+  );
 }
 
 .container {
-    margin: 1rem;
-    text-align: center;
+  margin: 1rem;
+  text-align: center;
 }
 
 /*Navigation Bar */
 .nav {
-    background: rgb(8,255,241);
-    background: radial-gradient(circle, rgba(8,255,241,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(222,252,243,1) 0%, rgba(57,255,242,1) 59%);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 1rem;
+  background: rgb(8, 255, 241);
+  background: radial-gradient(
+    circle,
+    rgba(8, 255, 241, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(222, 252, 243, 1) 0%,
+    rgba(57, 255, 242, 1) 59%
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
 .site-title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
 .nav a {
-    color: inherit;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: .25rem;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
 }
 
 .nav li.active {
-    background-color: #555;
+  background-color: #555;
 }
 
 .nav li:hover {
-    background-color: #777;
+  background-color: #777;
 }
 
 .header {
@@ -109,21 +119,20 @@ background: linear-gradient(159deg, rgba(76,231,233,1) 31%, rgba(45,253,216,1) 5
   color: #73c2e1;
 }
 
-
 /* HOME PAGE STYLE */
 .homepage {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.homepage .content{
+.homepage .content {
   max-width: 60rem;
 }
 
@@ -147,78 +156,77 @@ background: linear-gradient(159deg, rgba(76,231,233,1) 31%, rgba(45,253,216,1) 5
 }
 
 .content {
-    display: flex;
-    width: 80%;
+  display: flex;
+  width: 80%;
 }
 
 .text-content {
-    flex: 1;
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
 }
 
 .image-content {
-    flex: 1;
+  flex: 1;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* MENU ITEMS */
 .menu-header {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2rem;
-    color: #333;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2rem;
+  color: #333;
 }
 
 .menu-header p {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
 }
 
 .menu-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .menu-item {
-    text-align: center;
-     border: 5px solid #000000;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    transition: background-color 0.3s ease-in-out; /* Add transition for background-color */
+  text-align: center;
+  border: 5px solid #000000;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  transition: background-color 0.3s ease-in-out; /* Add transition for background-color */
 }
 
 .menu-item:hover {
-    background-color: #88cee5; /* Change background color to blue on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #fff; /* Change text color to white on hover */
+  background-color: #88cee5; /* Change background color to blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff; /* Change text color to white on hover */
 }
 
 .menu-image {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
 }
 
 .menu-category {
-    font-size: 1.4rem;
-    color: #333;
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+  font-size: 1.4rem;
+  color: #333;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
-
 
 /* order now button */
 .ordernow-btn {
@@ -239,177 +247,174 @@ img {
 } */
 
 .view-order-button {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .view-order-button button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-
 .view-order-button button:hover {
-    background-color: #88cee5;
-    transform: scale(1.05); 
+  background-color: #88cee5;
+  transform: scale(1.05);
 }
 
 /* MY ORDER COMPONENT STYLES */
 .my-order-header {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2rem;
-    color: #333;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #333;
 }
 
 .order-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .order-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    border: 3px solid #000;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-    width: 300px;
-    max-width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .order-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    background-color: #88cee5; /* Add a blue background color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background-color: #88cee5; /* Add a blue background color on hover */
 }
 
 .order-image {
-    object-fit: cover;
-    border-radius: 5px;
-    width: 100%;
-    max-height: 200px;
-    margin-bottom: 10px;
+  object-fit: cover;
+  border-radius: 5px;
+  width: 100%;
+  max-height: 200px;
+  margin-bottom: 10px;
 }
 
 .item-info {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .item-info p {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .quantity-controls-my-order {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .quantity-controls-my-order button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 0.3rem 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .quantity-controls-my-order button:hover {
-    background-color: #939191;
+  background-color: #939191;
 }
 
 .remove-button {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 0.3rem 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .remove-button:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
-
 .quantity-controls {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .quantity-controls button {
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    padding: 0.3rem 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 0.3rem;
-    border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 0.3rem;
+  border-radius: 5px;
 }
 
 .quantity-controls button:hover {
-    background-color: #939191;
+  background-color: #939191;
 }
 
 .remove-button {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 0.3rem 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    border-radius: 5px; 
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border-radius: 5px;
 }
 
 .remove-button:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 /* Payment Details*/
 
 .proceed-button {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.proceed-button  {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+.proceed-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
 }
-
 
 .proceed-button:hover {
-    background-color: #88cee5;
-    transform: scale(1.05); 
+  background-color: #88cee5;
+  transform: scale(1.05);
 }
 
 .payment-details {
@@ -429,7 +434,8 @@ img {
   margin-top: 15px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
 }
