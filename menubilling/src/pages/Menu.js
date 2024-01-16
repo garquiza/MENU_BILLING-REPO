@@ -1,13 +1,72 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PizzaImg from "../images/pizza.png";
-import PastaImg from "../images/pasta.png";
-import BurgerImg from "../images/burger.png";
-import FriesImg from "../images/fries.png";
-import DrinksImg from "../images/drinks.png";
-import DessertImg from "../images/dessert.png";
+import React, { useState } from "react";
+import MyOrder from "./MyOrder";
+
+import Pepperoni from "../images/pepperoni.png";
+import Hawaiian from "../images/hawaiian.png";
+import Supreme from "../images/supreme.png";
+import MeatLovers from "../images/meatlovers.png";
+
+import Spaghetti from "../images/spaghetti.png";
+import Carbonara from "../images/carbonara.png";
+import Penne from "../images/penne.png";
+import Baked from "../images/baked.png";
+
+import Ultimate from "../images/ultimate.png";
+import Chicken from "../images/chicken.png";
+import Veggie from "../images/veggie.png";
+
+import Water from "../images/water.png";
+import Softdrinks from "../images/softdrinks.png";
+import Coffee from "../images/coffee.png";
+
+import Halo from "../images/halo-halo.png";
+import Cake from "../images/cake.png";
+import IceCream from "../images/ice-cream.png";
+
 
 const Menu = () => {
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [showMyOrder, setShowMyOrder] = useState(false);
+
+  const addToOrder = (item) => {
+    const existingItem = selectedItems.find(
+      (selectedItem) => selectedItem.id === item.id
+    );
+
+    if (existingItem) {
+      // If item already in order, update quantity
+      const updatedItems = selectedItems.map((selectedItem) =>
+        selectedItem.id === item.id
+          ? { ...selectedItem, quantity: selectedItem.quantity + 1 }
+          : selectedItem
+      );
+      setSelectedItems(updatedItems);
+    } else {
+      // If item not in order, add it with quantity 1
+      setSelectedItems([...selectedItems, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const removeFromOrder = (itemId) => {
+    const updatedItems = selectedItems.filter((item) => item.id !== itemId);
+    setSelectedItems(updatedItems);
+  };
+
+  const updateQuantity = (itemId, amount) => {
+    const updatedItems = selectedItems.map((item) =>
+      item.id === itemId
+        ? { ...item, quantity: Math.max(item.quantity + amount, 0) }
+        : item
+    );
+    setSelectedItems(updatedItems);
+  };
+
+  const toggleMyOrder = () => {
+    setShowMyOrder(!showMyOrder);
+  };
+
+  const categories = ["Pizza", "Pasta", "Burger", "Drinks", "Dessert"];
+
   return (
     <div>
       <div className="menu-header">
@@ -16,35 +75,179 @@ const Menu = () => {
       </div>
 
       {/* MENU ITEMS */}
-      <div className="menu-items">
-        {menuItems.map((item) => (
-          <div key={item.id} className="menu-item">
-            <img src={item.image} alt={item.name} className="menu-image" />
-            <p>{item.name}</p>
-            <Link to={`/menu/${item.id}`}>
-              <button className="view-details-button">View Details</button>
-            </Link>
+      {categories.map((category) => (
+        <div key={category} className="menu-category">
+          <h2>{category}</h2>
+          <div className="menu-items">
+            {menuItems
+              .filter((item) => item.category === category)
+              .map((item) => (
+                <div key={item.id} className="menu-item">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="menu-image"
+                  />
+                  <p>{item.name}</p>
+                  <p>Price: ₱{item.price.toFixed(2)}</p>
+                  <div className="quantity-controls">
+                    <button onClick={() => updateQuantity(item.id, -1)}>
+                      -
+                    </button>
+                    <span>
+                      {selectedItems.find(
+                        (selectedItem) => selectedItem.id === item.id
+                      )?.quantity || 0}
+                    </span>
+                    <button onClick={() => addToOrder(item)}>+</button>
+                  </div>
+                </div>
+              ))}
           </div>
-        ))}
+        </div>
+      ))}
+
+      {/* VIEW MY ORDER BUTTON */}
+      <div className="view-order-button">
+        <button onClick={toggleMyOrder}>View My Order</button>
       </div>
 
-      {/* BACK BUTTON */}
-      <div className="back-button">
-        <Link to="/">
-          <button>Back</button>
-        </Link>
-      </div>
+      {/* MY ORDER COMPONENT */}
+      {showMyOrder && (
+        <MyOrder
+          selectedItems={selectedItems}
+          removeFromOrder={removeFromOrder}
+          updateQuantity={updateQuantity}
+        />
+      )}
     </div>
   );
 };
 
 const menuItems = [
-  { id: "pizza", name: "Pizza", image: PizzaImg },
-  { id: "pasta", name: "Pasta", image: PastaImg },
-  { id: "burger", name: "Burger", image: BurgerImg },
-  { id: "fries", name: "Fries", image: FriesImg },
-  { id: "drinks", name: "Drinks", image: DrinksImg },
-  { id: "dessert", name: "Dessert", image: DessertImg },
+  {
+    id: "pepperoni",
+    name: "Pepperoni Pizza",
+    image: Pepperoni,
+    price: 399,
+    category: "Pizza",
+  },
+  {
+    id: "hawaiian",
+    name: "Hawaiian",
+    image: Hawaiian,
+    price: 399,
+    category: "Pizza",
+  },
+  {
+    id: "supreme",
+    name: "Supreme",
+    image: Supreme,
+    price: 499,
+    category: "Pizza",
+  },
+  {
+    id: "meat-lovers",
+    name: "Meat Lovers",
+    image: MeatLovers,
+    price: 499,
+    category: "Pizza",
+  },
+
+  {
+    id: "spag",
+    name: "Spaghetti Bolognese",
+    image: Spaghetti,
+    price: 150,
+    category: "Pasta",
+  },
+  {
+    id: "carbonara",
+    name: "Carbonara",
+    image: Carbonara,
+    price: 150,
+    category: "Pasta",
+  },
+  {
+    id: "baked-pasta",
+    name: "Fusilli Pasta Bake",
+    image: Baked,
+    price: 200,
+    category: "Pasta",
+  },
+  {
+    id: "penne-pasta",
+    name: "Penne Pasta with Mushrooms",
+    image: Penne,
+    price: 200,
+    category: "Pasta",
+  },
+
+  {
+    id: "chicken-burger",
+    name: "Chicken Burger",
+    image: Chicken,
+    price: 75,
+    category: "Burger",
+  },
+  {
+    id: "veggie-burger",
+    name: "Veggie Burger",
+    image: Veggie,
+    price: 85,
+    category: "Burger",
+  },
+  {
+    id: "ultimate-burger",
+    name: "Ultimate Burger",
+    image: Ultimate,
+    price: 100,
+    category: "Burger",
+  },
+
+  {
+    id: "water",
+    name: "Bottled Water",
+    image: Water,
+    price: 20,
+    category: "Drinks",
+  },
+  {
+    id: "softdrinks",
+    name: "Soda",
+    image: Softdrinks,
+    price: 30,
+    category: "Drinks",
+  },
+  {
+    id: "coffee",
+    name: "Black Coffee",
+    image: Coffee,
+    price: 50,
+    category: "Drinks",
+  },
+
+  {
+    id: "halo-halo",
+    name: "Halo-Halo",
+    image: Halo,
+    price: 55,
+    category: "Dessert",
+  },
+  {
+    id: "cake",
+    name: "Chocolate Chip Cake",
+    image: Cake,
+    price: 60,
+    category: "Dessert",
+  },
+  {
+    id: "ice-cream",
+    name: "Ice Cream",
+    image: IceCream,
+    price: 20,
+    category: "Dessert",
+  },
 ];
 
 export default Menu;
