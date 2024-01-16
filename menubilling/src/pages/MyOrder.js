@@ -87,7 +87,7 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                   <span>{item.quantity}</span>
                   <button onClick={() => updateQuantity(item.id, 1)}>+</button>
                 </div>
-                <button onClick={() => removeFromOrder(item.id)}>Remove</button>
+                <button className="remove-button" onClick={() => removeFromOrder(item.id)}>Remove</button>
               </div>
             ))}
           </div>

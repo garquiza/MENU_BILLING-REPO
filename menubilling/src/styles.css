@@ -107,12 +107,41 @@ body {
   color: #73c2e1;
 }
 
+
 /* HOME PAGE STYLE */
 .homepage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.homepage .content{
+  max-width: 60rem;
+}
+
+.homepage span {
+  color: #ffc107;
+  text-transform: uppercase;
+}
+
+.homepage .text-content h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home .text-content p {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #eee;
 }
 
 .content {
@@ -160,41 +189,7 @@ img {
 /* .view-details-button {
 } */
 
-.view-details-button {
-    position: fixed;
-    top: 80px;
-    left: 30px;
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 0.9rem 3rem;
-    font-size: 1.7rem;
-    color: #fff;
-    background: black;
-    cursor: pointer;
-}
-
-.view-details-button:hover {
-    letter-spacing: 0.2rem;
-}
-
-.back-button {
-    position: fixed;
-    top: 80px;
-    left: 30px;
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 0.9rem 3rem;
-    font-size: 1.7rem;
-    color: #fff;
-    background: black;
-    cursor: pointer;
-    }
-
-.back-button:hover {
-    letter-spacing: 0.2rem;
-}
-
-.btn {
+.view-order-button {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.9rem 3rem;
@@ -204,7 +199,21 @@ img {
   cursor: pointer;
 }
 
-.btn:hover {
+.view-order-button:hover {
+    letter-spacing: 0.2rem;
+}
+
+.ordernow-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: #000000;
+  cursor: pointer;
+}
+
+.ordernow-btn:hover {
   letter-spacing: 0.2rem;
 }
 
@@ -216,27 +225,50 @@ img {
 }
 
 .order-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
     justify-content: center;
-    gap: 10px;
     margin-top: 20px;
+}
+
+.order-list .order-item .order-item-details {
+    padding: 2rem;
+    text-align: center;
+    border: 0.2rem solid #88cee5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.order-list .box-order-item .order-item-details .order-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 1rem; /* Add margin to separate image from other contents */
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
 }
 
 .order-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Change to column layout */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     border: 1px solid #ccc;
     padding: 10px;
     max-width: 300px;
     width: 100%;
 }
-
 .order-item-details {
     display: flex;
-    align-items: center;
-    flex-grow: 1;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center horizontally */
 }
 
 .order-image {
@@ -250,7 +282,39 @@ img {
 }
 
 .quantity-controls-my-order {
-    display: flex;
     align-items: center;
     margin-left: 10px;
+}
+
+.quantity-controls-my-order {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls-my-order button {
+    background-color: #92c2f6;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 0.3rem;
+}
+
+.quantity-controls-my-order button:hover {
+    background-color: #92c2f6;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
 }

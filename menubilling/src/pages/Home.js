@@ -10,7 +10,7 @@ export default function Home() {
           <h1>Menu Billing Web Application</h1>
           <p>Delicious food for every mood</p>
           <Link to="/menu">
-            <button className="btn">Order Now</button>
+            <button className="ordernow-btn">Order Now</button>
           </Link>
         </div>
         <div className="image-content">
