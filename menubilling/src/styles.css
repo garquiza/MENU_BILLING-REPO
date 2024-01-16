@@ -166,7 +166,15 @@ img {
 /* MENU ITEMS */
 .menu-header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50px; 
+    font-size: 2rem;
+    color: #333; 
+}
+
+.menu-header p {
+    text-align: center;
+    font-size: 2rem;
+    color: #333; 
 }
 
 .menu-items {
@@ -174,35 +182,36 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    gap: 20px; 
 }
 
 .menu-item {
-    margin: 10px;
     text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
 }
 
 .menu-image {
-    width: 300px;
-    height: 300px;
+    width: 100%; 
+    height: auto; 
+    max-height: 200px; 
 }
 
-/* .view-details-button {
-} */
-
-.view-order-button {
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 0.9rem 3rem;
-  font-size: 1.7rem;
-  color: #fff;
-  background: #000000;
-  cursor: pointer;
+.menu-category {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.view-order-button:hover {
-    letter-spacing: 0.2rem;
-}
-
+/* order now button */
 .ordernow-btn {
   margin-top: 1rem;
   display: inline-block;
@@ -217,11 +226,37 @@ img {
   letter-spacing: 0.2rem;
 }
 
-/* MY ORDER COMPONENT STYLES */
+/* .view-details-button {
+} */
 
+.view-order-button {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.view-order-button button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.view-order-button button:hover {
+    background-color: #88cee5;
+    transform: scale(1.05); 
+}
+
+/* MY ORDER COMPONENT STYLES */
 .my-order-header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px; 
+    font-size: 2rem; 
+    color: #333; 
 }
 
 .order-list {
@@ -229,66 +264,45 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.order-list .order-item .order-item-details {
-    padding: 2rem;
-    text-align: center;
-    border: 0.2rem solid #88cee5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-}
-
-.order-list .box-order-item .order-item-details .order-image {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin-bottom: 1rem; /* Add margin to separate image from other contents */
-}
-
-.menu .box-container .box h3 {
-    color: #fff;
-    font-size: 2rem;
-    padding: 1rem 0;
+    margin: 20px auto; 
 }
 
 .order-item {
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    flex-direction: column;
     border: 1px solid #ccc;
     padding: 10px;
     max-width: 300px;
     width: 100%;
+    margin: 10px;
+    background-color: #fff; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
+
 .order-item-details {
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    align-items: center; /* Center horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 .order-image {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
 }
 
 .item-info {
     flex-grow: 1;
-}
-
-.quantity-controls-my-order {
-    align-items: center;
-    margin-left: 10px;
+    text-align: center; 
 }
 
 .quantity-controls-my-order {
     display: flex;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 10px;
 }
 
 .quantity-controls-my-order button {
@@ -299,11 +313,13 @@ img {
     font-size: 1rem;
     cursor: pointer;
     margin: 0 0.3rem;
+    border-radius: 5px;
 }
 
 .quantity-controls-my-order button:hover {
     background-color: #92c2f6;
 }
+
 
 .remove-button {
     background-color: #dc3545;
@@ -313,6 +329,7 @@ img {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 0.5rem;
+    border-radius: 5px; 
 }
 
 .remove-button:hover {
