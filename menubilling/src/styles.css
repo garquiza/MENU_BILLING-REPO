@@ -200,16 +200,21 @@ img {
   position: relative;
   text-align: center;
   border: transparent;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white for glassmorphism effect */
   padding: 60px;
-  border-radius: 5px;
+  border-radius: 15px; /* Increased border-radius for a smoother glassmorphism look */
   width: 300px;
-  height: 300px; /* Set a suitable fixed height or adjust as needed */
+  height: 350px; /* Set a suitable fixed height or adjust as needed */
   transition: box-shadow 0.3s ease-in-out;
   overflow: visible;
-  margin-bottom: 20px; /* Add margin to the bottom of each menu item */
+  margin-bottom: 80px; /* Add margin to the bottom of each menu item */
+  backdrop-filter: blur(10px); /* Apply background blur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
+.menu-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for depth */
+}
 
 .menu-item img {
   width: 100%;
@@ -224,16 +229,13 @@ img {
 
 .menu-item p {
   margin-bottom: 5px; /* Separate paragraphs if needed */
-  margin-top: 70px;
+  margin-top: 60px;
 }
+
 
 .menu-item .menu-content {
   position: relative;
   z-index: 3;
-}
-
-.menu-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -244,13 +246,16 @@ img {
 }
 
 .menu-category {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #333;
-  margin: 10px;
-  padding: 5px 10px;
+  margin: 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+}
+
+.category-title {
+  margin-bottom: 10%; /* Add margin to the bottom of each h2 element */
 }
 
 /* order now button */

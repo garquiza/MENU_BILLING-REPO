@@ -96,7 +96,7 @@ const Menu = () => {
       {/* MENU ITEMS */}
       {categories.map((category) => (
         <div key={category} className="menu-category">
-          <h2>{category}</h2>
+          <h2 className="category-title">{category}</h2>
           <div className="menu-items">
             {menuItems
               .filter((item) => item.category === category)
