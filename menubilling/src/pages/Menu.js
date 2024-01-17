@@ -24,6 +24,27 @@ import Cake from "../images/cake.png";
 import IceCream from "../images/ice-cream.png";
 
 
+const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
+  return (
+    <div className="menu-item">
+      <img src={item.image} alt={item.name} className="menu-image" />
+      <div className="menu-content">
+        <p>{item.name}</p>
+        <p>Price: ₱{item.price.toFixed(2)}</p>
+        <div className="quantity-controls">
+          <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+          <span>
+            {selectedItems.find(
+              (selectedItem) => selectedItem.id === item.id
+            )?.quantity || 0}
+          </span>
+          <button onClick={() => addToOrder(item)}>+</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Menu = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [showMyOrder, setShowMyOrder] = useState(false);
@@ -34,7 +55,6 @@ const Menu = () => {
     );
 
     if (existingItem) {
-      // If item already in order, update quantity
       const updatedItems = selectedItems.map((selectedItem) =>
         selectedItem.id === item.id
           ? { ...selectedItem, quantity: selectedItem.quantity + 1 }
@@ -42,7 +62,6 @@ const Menu = () => {
       );
       setSelectedItems(updatedItems);
     } else {
-      // If item not in order, add it with quantity 1
       setSelectedItems([...selectedItems, { ...item, quantity: 1 }]);
     }
   };
@@ -67,7 +86,7 @@ const Menu = () => {
 
   const categories = ["Pizza", "Pasta", "Burger", "Drinks", "Dessert"];
 
-  return (
+   return (
     <div>
       <div className="menu-header">
         <h1>Menu</h1>
@@ -82,26 +101,13 @@ const Menu = () => {
             {menuItems
               .filter((item) => item.category === category)
               .map((item) => (
-                <div key={item.id} className="menu-item">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="menu-image"
-                  />
-                  <p>{item.name}</p>
-                  <p>Price: ₱{item.price.toFixed(2)}</p>
-                  <div className="quantity-controls">
-                    <button onClick={() => updateQuantity(item.id, -1)}>
-                      -
-                    </button>
-                    <span>
-                      {selectedItems.find(
-                        (selectedItem) => selectedItem.id === item.id
-                      )?.quantity || 0}
-                    </span>
-                    <button onClick={() => addToOrder(item)}>+</button>
-                  </div>
-                </div>
+                <MenuItem
+                  key={item.id}
+                  item={item}
+                  selectedItems={selectedItems}
+                  updateQuantity={updateQuantity}
+                  addToOrder={addToOrder}
+                />
               ))}
           </div>
         </div>
@@ -123,7 +129,6 @@ const Menu = () => {
     </div>
   );
 };
-
 const menuItems = [
   {
     id: "pepperoni",

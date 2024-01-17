@@ -197,20 +197,45 @@ img {
 }
 
 .menu-item {
+  position: relative;
   text-align: center;
-  border: 5px solid #000000;
-  background-color: #fff;
-  padding: 20px;
+  border: transparent;
+  background-color: transparent;
+  padding: 60px;
   border-radius: 5px;
   width: 300px;
-  transition: background-color 0.3s ease-in-out; /* Add transition for background-color */
+  height: 300px; /* Set a suitable fixed height or adjust as needed */
+  transition: box-shadow 0.3s ease-in-out;
+  overflow: visible;
+  margin-bottom: 20px; /* Add margin to the bottom of each menu item */
+}
+
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Adjust the max-height value based on padding */
+  position: absolute;
+  top: -100px; /* Move the image outside the top border by adjusting the top value */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.menu-item p {
+  margin-bottom: 5px; /* Separate paragraphs if needed */
+  margin-top: 70px;
+}
+
+.menu-item .menu-content {
+  position: relative;
+  z-index: 3;
 }
 
 .menu-item:hover {
-  background-color: #88cee5; /* Change background color to blue on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #fff; /* Change text color to white on hover */
 }
+
 
 .menu-image {
   width: 100%;

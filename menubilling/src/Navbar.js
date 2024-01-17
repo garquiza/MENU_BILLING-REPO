@@ -12,9 +12,6 @@ const Navbar = () => {
             <Link to="/">Home</Link>
             <Link to="/menu">Menu</Link>
           </div>
-          <div className="logo-container">
-            <img src="" alt="Logo" className="logo" />
-          </div>
         </nav>
       </header>
     </>
