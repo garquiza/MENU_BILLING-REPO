@@ -137,7 +137,7 @@ body {
 }
 
 .homepage span {
-  color: #ffc107;
+  color: #84d3fa;
   text-transform: uppercase;
 }
 
@@ -232,12 +232,10 @@ img {
   margin-top: 60px;
 }
 
-
 .menu-item .menu-content {
   position: relative;
   z-index: 3;
 }
-
 
 .menu-image {
   width: 100%;
@@ -263,6 +261,7 @@ img {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.9rem 3rem;
+  border-radius: 50px;
   font-size: 1.7rem;
   color: #fff;
   background: #000000;
@@ -288,7 +287,7 @@ img {
   color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: background-color 0.3s, transform 0.2s;
 }
 
