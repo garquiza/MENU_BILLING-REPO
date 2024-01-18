@@ -87,7 +87,12 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                   <span>{item.quantity}</span>
                   <button onClick={() => updateQuantity(item.id, 1)}>+</button>
                 </div>
-                <button className="remove-button"onClick={() => removeFromOrder(item.id)}>Remove</button>
+                <button
+                  className="remove-button"
+                  onClick={() => removeFromOrder(item.id)}
+                >
+                  Remove
+                </button>
               </div>
             ))}
           </div>
@@ -95,86 +100,91 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
           {proceedToPayment ? ( // Render payment details and payment section
             <>
               {/* PAYMENT DETAILS (RECEIPT) */}
-<div className="payment-details">
-  <h2>Payment Receipt</h2>
-  <p>Date Today: {formatDate()}</p>
-  <table className="payment-details-table">
-    <thead>
-      <tr>
-        <th>ITEM</th>
-        <th>QTY</th>
-        <th>PRICE</th>
-      </tr>
-    </thead>
-    <tbody>
-      {selectedItems.map((item) => (
-        <tr key={item.id}>
-          <td>{item.name}</td>
-          <td>{item.quantity}</td>
-          <td>₱{item.price.toFixed(2)}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-  <p>Total Amount: ₱{calculateTotalAmount().toFixed(2)}</p>
-  <div className="discount-options">
-    <label>
-    <p>Discount Options:</p>
-      <input
-        type="radio"
-        name="discount"
-        value="none"
-        checked={discountType === "none"}
-        onChange={() => setDiscountType("none")}
-      />
-      Regular
-    </label>
-    <label>
-      <input
-        type="radio"
-        name="discount"
-        value="seniorCitizen"
-        checked={discountType === "seniorCitizen"}
-        onChange={() => setDiscountType("seniorCitizen")}
-      />
-      Senior Citizen
-    </label>
-    <label>
-      <input
-        type="radio"
-        name="discount"
-        value="student"
-        checked={discountType === "student"}
-        onChange={() => setDiscountType("student")}
-      />
-      Student
-    </label>
-  </div>
-</div>
+              <div className="payment-details">
+                <h2>Payment Receipt</h2>
+                <p>Date Today: {formatDate()}</p>
+                <table className="payment-details-table">
+                  <thead>
+                    <tr>
+                      <th>ITEM</th>
+                      <th>QTY</th>
+                      <th>PRICE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedItems.map((item) => (
+                      <tr key={item.id}>
+                        <td>{item.name}</td>
+                        <td>{item.quantity}</td>
+                        <td>₱{item.price.toFixed(2)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p class="total-amount">Total Amount: ₱{calculateTotalAmount().toFixed(2)}</p>
+                <div className="discount-options">
+                  <label>
+                    <p>Discount Options:</p>
+                    <input
+                      type="radio"
+                      name="discount"
+                      value="none"
+                      checked={discountType === "none"}
+                      onChange={() => setDiscountType("none")}
+                    />
+                    Regular
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="discount"
+                      value="seniorCitizen"
+                      checked={discountType === "seniorCitizen"}
+                      onChange={() => setDiscountType("seniorCitizen")}
+                    />
+                    Senior Citizen
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="discount"
+                      value="student"
+                      checked={discountType === "student"}
+                      onChange={() => setDiscountType("student")}
+                    />
+                    Student
+                  </label>
+                </div>
+              </div>
               {/* PAYMENT SECTION */}
               <div className="payment-section">
                 <h2>Payment Section</h2>
                 <label>
                   Input Cash: ₱
                   <input
-                  className="input-cash"
-                  type="number"
-                  value={cashInput}
-                  onChange={(e) => setCashInput(e.target.value)}
-                />
-              </label>
-               <button className="complete-payment-button" onClick={handlePayment}>
-                Complete Payment
-              </button>
-              {cashInput !== "" && (
-                <p className="change-amount">Change: ₱{calculateChange().toFixed(2)}</p>
-              )}
+                    className="input-cash"
+                    type="number"
+                    value={cashInput}
+                    onChange={(e) => setCashInput(e.target.value)}
+                  />
+                </label>
+                <button
+                  className="complete-payment-button"
+                  onClick={handlePayment}
+                >
+                  Complete Payment
+                </button>
+                {cashInput !== "" && (
+                  <p className="change-amount">
+                    Change: ₱{calculateChange().toFixed(2)}
+                  </p>
+                )}
               </div>
             </>
           ) : (
             <button className="proceed-button" onClick={toggleProceedToPayment}>
-    Proceed to Payment
-  </button>
+              Proceed to Payment
+            </button>
           )}
         </div>
       )}
