@@ -495,11 +495,15 @@ th {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px;
   width: 80%;
   max-width: 300px;
-  margin: 20px auto;
+  margin: 30px auto;
   text-align: center;
+}
+
+.payment-section .input-cash {
+  margin-top: 10px; 
 }
 
 .input-cash {
