@@ -96,7 +96,7 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
             <>
               {/* PAYMENT DETAILS (RECEIPT) */}
 <div className="payment-details">
-  <h2>Payment Details</h2>
+  <h2>Payment Receipt</h2>
   <p>Date Today: {formatDate()}</p>
   <table className="payment-details-table">
     <thead>
@@ -119,6 +119,7 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
   <p>Total Amount: ₱{calculateTotalAmount().toFixed(2)}</p>
   <div className="discount-options">
     <label>
+    <p>Discount Options:</p>
       <input
         type="radio"
         name="discount"
