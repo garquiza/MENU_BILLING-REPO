@@ -87,7 +87,14 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                   <span>{item.quantity}</span>
                   <button onClick={() => updateQuantity(item.id, 1)}>+</button>
                 </div>
-                <button onClick={() => removeFromOrder(item.id)}>Remove</button>
+
+                <button
+                  className="remove-button"
+                  onClick={() => removeFromOrder(item.id)}
+                >
+                  Remove
+                </button>
+
               </div>
             ))}
           </div>
@@ -96,9 +103,11 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
             <>
               {/* PAYMENT DETAILS (RECEIPT) */}
               <div className="payment-details">
-                <h2>Payment Details</h2>
+
+                <h2>Payment Receipt</h2>
                 <p>Date Today: {formatDate()}</p>
-                <table>
+                <table className="payment-details-table">
+
                   <thead>
                     <tr>
                       <th>ITEM</th>
@@ -116,9 +125,12 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                     ))}
                   </tbody>
                 </table>
-                <p>Total Amount: ₱{calculateTotalAmount().toFixed(2)}</p>
+
+                <p class="total-amount">Total Amount: ₱{calculateTotalAmount().toFixed(2)}</p>
                 <div className="discount-options">
                   <label>
+                    <p>Discount Options:</p>
+
                     <input
                       type="radio"
                       name="discount"
@@ -151,25 +163,42 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                 </div>
               </div>
 
+
               {/* PAYMENT SECTION */}
               <div className="payment-section">
                 <h2>Payment Section</h2>
                 <label>
                   Input Cash: ₱
                   <input
+
+                    className="input-cash"
+
                     type="number"
                     value={cashInput}
                     onChange={(e) => setCashInput(e.target.value)}
                   />
                 </label>
-                <button onClick={handlePayment}>Complete Payment</button>
-                {cashInput !== "" && ( // Render change only if cash is entered
-                  <p>Change: ₱{calculateChange().toFixed(2)}</p>
+<
+                <button
+                  className="complete-payment-button"
+                  onClick={handlePayment}
+                >
+                  Complete Payment
+                </button>
+                {cashInput !== "" && (
+                  <p className="change-amount">
+                    Change: ₱{calculateChange().toFixed(2)}
+                  </p>
+
                 )}
               </div>
             </>
           ) : (
-            <button onClick={toggleProceedToPayment}>Proceed to Payment</button>
+
+            <button className="proceed-button" onClick={toggleProceedToPayment}>
+              Proceed to Payment
+            </button>
+
           )}
         </div>
       )}
