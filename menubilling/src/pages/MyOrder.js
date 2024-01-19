@@ -178,7 +178,7 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                     onChange={(e) => setCashInput(e.target.value)}
                   />
                 </label>
-<
+
                 <button
                   className="complete-payment-button"
                   onClick={handlePayment}
