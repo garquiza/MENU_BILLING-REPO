@@ -25,7 +25,7 @@
 
 body {
   margin: 0;
-  background: var(--background-primary);
+  background: url('images/BG.png') center/cover no-repeat; 
 }
 
 .container {
@@ -74,12 +74,12 @@ body {
 }
 
 .header {
-  background: var(--background-primary);
+  background-color: linear-gradient(to right, #b0d0be, #76a793, #e0f1e0, #8cb4a2, #92bca9, #cce3d1, #d3ecd4, #d1e4dc, #8ebc9c);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 7%;
-  border-bottom: 0.2rem solid #b2d6e1;
+  border-bottom: 0.2rem solid white;
   position: fixed;
   top: 0;
   left: 0;
@@ -171,6 +171,7 @@ img {
 
 /* MENU ITEMS */
 .menu-header {
+  padding-top: 3%;
   text-align: center;
   margin-top: 50px;
   font-size: 2rem;
@@ -179,8 +180,9 @@ img {
 
 .menu-header p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
   color: var(--text-primary);
+  padding-bottom: 3%;
 }
 
 .menu-items {
@@ -267,8 +269,6 @@ img {
   letter-spacing: 0.2rem;
 }
 
-/* .view-details-button {
-} */
 
 .view-order-button {
   text-align: center;
@@ -278,7 +278,7 @@ img {
 .view-order-button button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #beb1b1bd;
+  background-color: white;
   color: var(--text-primary);
   border: none;
   cursor: pointer;
@@ -325,7 +325,7 @@ img {
 .order-item:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
-  background-color: #88cee5; /* Add a blue background color on hover */
+  background-color: #88cee5;
 }
 
 .order-image {
@@ -353,6 +353,9 @@ img {
   gap: 10px;
 }
 
+.discount-options p{
+  margin-bottom: 3%;
+}
 .discount-options input {
   margin-right: 6px; /* Add margin between the radio buttons and the text */
 }
@@ -432,7 +435,7 @@ img {
 .proceed-button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #beb1b1bd;
+  background-color: white;
   color: var(--text-primary);
   border: none;
   cursor: pointer;
