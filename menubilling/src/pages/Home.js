@@ -16,11 +16,14 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeInOut" }}>Delicious food for every mood</motion.p>
           <Link to="/menu">
           <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
-              className="ordernow-btn"
-            >Order Now</motion.button>
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+            //whileHover={{ scale: 1.1, transition: { duration: 0 } }} 
+            className="ordernow-btn"
+          >
+            Order Now
+          </motion.button>
           </Link>
         </div>
         <motion.div

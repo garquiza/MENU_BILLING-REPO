@@ -74,6 +74,7 @@ const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
 const Menu = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [showMyOrder, setShowMyOrder] = useState(false);
+  
 
   const addToOrder = (item) => {
     const existingItem = selectedItems.find(
