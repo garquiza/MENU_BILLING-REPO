@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MyOrder from "./MyOrder";
+import { motion } from "framer-motion";
 
 
 import Pepperoni from "../images/pepperoni.png";
@@ -26,11 +27,33 @@ import IceCream from "../images/ice-cream.png";
 
 
 const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleHoverExit = () => {
+    setIsHovered(false);
+  };
+
+  const hoverVariants = {
+    hover: { scale: 1.05 },
+    noHover: { scale: 1 },
+  };
 
   return (
-    <div className="menu-item">
-      <img src={item.image} alt={item.name} className="menu-image" />
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover="hover"
+      variants={hoverVariants}
+      className="menu-item"
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHoverExit}
+    >
+    <img src={item.image} alt={item.name} className="menu-image" />
       <div className="menu-content">
         <p>{item.name}</p>
         <p>Price: ₱{item.price.toFixed(2)}</p>
@@ -44,7 +67,7 @@ const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
           <button onClick={() => addToOrder(item)}>+</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

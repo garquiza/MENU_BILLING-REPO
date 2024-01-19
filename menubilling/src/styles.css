@@ -269,8 +269,6 @@ img {
   letter-spacing: 0.2rem;
 }
 
-
-
 .view-order-button {
   text-align: center;
   margin-top: 1rem;
@@ -372,7 +370,7 @@ img {
 }
 
 .quantity-controls-my-order button:hover {
-  background-color: #939191;
+  background-color: var(--accent-color);
 }
 
 .remove-button {
@@ -408,7 +406,7 @@ img {
 }
 
 .quantity-controls button:hover {
-  background-color: #939191;
+  background-color: var(--accent-color);
 }
 
 .remove-button {
