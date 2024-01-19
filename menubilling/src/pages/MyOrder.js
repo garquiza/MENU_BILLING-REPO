@@ -77,10 +77,12 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
                     alt={item.name}
                     className="order-image"
                   />
-                  <p>{item.name}</p>
-                  <p>₱{item.price.toFixed(2)}</p>
+                  <div className="item-info">
+                    <p>{item.name}</p>
+                    <p>₱{item.price.toFixed(2)}</p>
+                  </div>
                 </div>
-                <div className="quantity-controls">
+                <div className="quantity-controls-my-order">
                   <button onClick={() => updateQuantity(item.id, -1)}>-</button>
                   <span>{item.quantity}</span>
                   <button onClick={() => updateQuantity(item.id, 1)}>+</button>
