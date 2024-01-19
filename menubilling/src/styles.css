@@ -275,6 +275,7 @@ img {
 /* .view-details-button {
 } */
 
+
 .view-order-button {
   text-align: center;
   margin-top: 1rem;
@@ -534,3 +535,57 @@ th {
 .change-amount {
   margin-top: 15px;
 }
+
+.back-button {
+    position: fixed;
+    top: 80px;
+    left: 30px;
+}
+
+/* MY ORDER COMPONENT STYLES */
+
+.my-order-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.order-item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.order-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.quantity-controls-my-order {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+

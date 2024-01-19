@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MyOrder from "./MyOrder";
 
+
 import Pepperoni from "../images/pepperoni.png";
 import Hawaiian from "../images/hawaiian.png";
 import Supreme from "../images/supreme.png";
@@ -25,6 +26,8 @@ import IceCream from "../images/ice-cream.png";
 
 
 const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
+
+
   return (
     <div className="menu-item">
       <img src={item.image} alt={item.name} className="menu-image" />
@@ -96,11 +99,14 @@ const Menu = () => {
       {/* MENU ITEMS */}
       {categories.map((category) => (
         <div key={category} className="menu-category">
+
           <h2 className="category-title">{category}</h2>
+
           <div className="menu-items">
             {menuItems
               .filter((item) => item.category === category)
               .map((item) => (
+
                 <MenuItem
                   key={item.id}
                   item={item}
@@ -108,6 +114,7 @@ const Menu = () => {
                   updateQuantity={updateQuantity}
                   addToOrder={addToOrder}
                 />
+
               ))}
           </div>
         </div>
