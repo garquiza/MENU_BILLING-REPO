@@ -1,3 +1,12 @@
+:root {
+  --background-primary: #f5f5f5;  
+  --background-secondary: #f0f0f0; 
+  --text-primary: #333;  
+  --text-secondary: #666;  
+  --accent-color: #ff7e67;
+  --accent-hover: #ff594f;  
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,13 +25,7 @@
 
 body {
   margin: 0;
-  background: rgb(76, 231, 233);
-  background: linear-gradient(
-    159deg,
-    rgba(76, 231, 233, 1) 31%,
-    rgba(45, 253, 216, 1) 54%,
-    rgba(116, 215, 244, 1) 100%
-  );
+  background: var(--background-primary);
 }
 
 .container {
@@ -30,18 +33,10 @@ body {
   text-align: center;
 }
 
-/*Navigation Bar */
+/* Navigation Bar */
 .nav {
-  background: rgb(8, 255, 241);
-  background: radial-gradient(
-    circle,
-    rgba(8, 255, 241, 1) 0%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(222, 252, 243, 1) 0%,
-    rgba(57, 255, 242, 1) 59%
-  );
-  color: white;
+  background: var(--accent-color);
+  color: var(--background-primary);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -71,20 +66,20 @@ body {
 }
 
 .nav li.active {
-  background-color: #555;
+  background-color: var(--background-secondary);
 }
 
 .nav li:hover {
-  background-color: #777;
+  background-color: var(--accent-hover);
 }
 
 .header {
-  background: #000000;
+  background: var(--background-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 7%;
-  border-bottom: 0.2rem solid #73c2e1;
+  border-bottom: 0.2rem solid #b2d6e1;
   position: fixed;
   top: 0;
   left: 0;
@@ -99,24 +94,23 @@ body {
 .header .navbar a {
   margin: 0 1rem;
   font-size: 1.6rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .header .navbar a:hover {
-  color: #73c2e1;
-  border-bottom: 0.1rem solid #73c2e1;
-  padding-bottom: 0.5rem;
+  color: var(--accent-color);
+  border-bottom: 0.1rem solid var(--accent-color);
 }
 
 .header .icons div {
-  color: #fff;
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 2.5rem;
   margin-left: 2rem;
 }
 
 .header .icons div:hover {
-  color: #73c2e1;
+  color: var(--accent-color);
 }
 
 /* HOME PAGE STYLE */
@@ -137,14 +131,14 @@ body {
 }
 
 .homepage span {
-  color: #84d3fa;
+  color: var(--accent-color);
   text-transform: uppercase;
 }
 
 .homepage .text-content h3 {
   font-size: 6rem;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--background-primary);
 }
 
 .home .text-content p {
@@ -152,7 +146,7 @@ body {
   font-weight: lighter;
   line-height: 1.8;
   padding: 1rem 0;
-  color: #eee;
+  color: var(--background-secondary);
 }
 
 .content {
@@ -162,11 +156,12 @@ body {
 
 .text-content {
   flex: 1;
-  padding: 20px;
+  padding-top: 100px;
 }
 
 .image-content {
   flex: 1;
+  padding-left:100px;
 }
 
 img {
@@ -179,13 +174,13 @@ img {
   text-align: center;
   margin-top: 50px;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .menu-header p {
   text-align: center;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .menu-items {
@@ -245,7 +240,7 @@ img {
 
 .menu-category {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-primary);
   margin: 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -256,15 +251,15 @@ img {
   margin-bottom: 10%; /* Add margin to the bottom of each h2 element */
 }
 
-/* order now button */
+/* Order now button */
 .ordernow-btn {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.9rem 3rem;
   border-radius: 50px;
   font-size: 1.7rem;
-  color: #fff;
-  background: #000000;
+  color: var(--background-primary);
+  background: var(--accent-color);
   cursor: pointer;
 }
 
@@ -283,8 +278,8 @@ img {
 .view-order-button button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #000000;
-  color: #fff;
+  background-color: #beb1b1bd;
+  color: var(--text-primary);
   border: none;
   cursor: pointer;
   border-radius: 50px;
@@ -292,7 +287,7 @@ img {
 }
 
 .view-order-button button:hover {
-  background-color: #88cee5;
+  background-color: var(--accent-color);
   transform: scale(1.05);
 }
 
@@ -301,7 +296,7 @@ img {
   text-align: center;
   margin-top: 20px;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .order-list {
@@ -317,7 +312,7 @@ img {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  border: 3px solid #000;
+  border: 3px solid var(--background-primary);
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -363,8 +358,8 @@ img {
 }
 
 .quantity-controls-my-order button {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   border: none;
   padding: 0.3rem 0.5rem;
   font-size: 1rem;
@@ -398,8 +393,8 @@ img {
 }
 
 .quantity-controls button {
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   border: none;
   padding: 0.3rem 0.5rem;
   font-size: 1rem;
@@ -437,8 +432,8 @@ img {
 .proceed-button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #000000;
-  color: #fff;
+  background-color: #beb1b1bd;
+  color: var(--text-primary);
   border: none;
   cursor: pointer;
   border-radius: 50px;
@@ -446,7 +441,7 @@ img {
 }
 
 .proceed-button:hover {
-  background-color: #88cee5;
+  background-color: var(--accent-color);
   transform: scale(1.05);
 }
 
@@ -517,8 +512,8 @@ th {
 }
 
 .complete-payment-button {
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
