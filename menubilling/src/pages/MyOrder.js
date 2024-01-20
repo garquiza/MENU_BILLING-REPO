@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
   const [cashInput, setCashInput] = useState("");
   const [discountType, setDiscountType] = useState("none");
   const [proceedToPayment, setProceedToPayment] = useState(false);
+  const paymentDetailsRef = useRef(null);
+
+  useEffect(() => {
+    if (proceedToPayment && paymentDetailsRef.current) {
+      paymentDetailsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [proceedToPayment]);
 
   const calculateTotalAmount = () => {
     const totalAmount = selectedItems.reduce(
@@ -99,11 +106,10 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
             ))}
           </div>
 
-          {proceedToPayment ? ( // Render payment details and payment section
+          {proceedToPayment ? (
             <>
               {/* PAYMENT DETAILS (RECEIPT) */}
-              <div className="payment-details">
-
+              <div className="payment-details" ref={paymentDetailsRef}>
                 <h2>Payment Receipt</h2>
                 <p>Date Today: {formatDate()}</p>
                 <table className="payment-details-table">
@@ -194,11 +200,9 @@ const MyOrder = ({ selectedItems, removeFromOrder, updateQuantity }) => {
               </div>
             </>
           ) : (
-
             <button className="proceed-button" onClick={toggleProceedToPayment}>
               Proceed to Payment
             </button>
-
           )}
         </div>
       )}

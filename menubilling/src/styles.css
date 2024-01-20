@@ -257,14 +257,15 @@ img {
 /* Order now button */
 .ordernow-btn {
   margin-top: 1rem;
+  font-weight: 700;
   display: inline-block;
   padding: 0.9rem 3rem;
   border-radius: 50px;
   font-size: 1.7rem;
   color: var(--background-primary);
-  background: var(--accent-color);
+  background-color: #01a66f6b;;
   cursor: pointer;
-  transition: transform 0.3s ease; /* Added transition for smooth effect */
+  transition: transform ; /* Added transition for smooth effect */
 }
 
 .ordernow-btn:hover {
@@ -289,8 +290,9 @@ img {
 }
 
 .view-order-button button:hover {
-  background-color: var(--accent-color);
+  background-color: #01a66f6b;
   transform: scale(1.05);
+  color: white;
 }
 
 /* MY ORDER COMPONENT STYLES */
@@ -446,8 +448,9 @@ img {
 }
 
 .proceed-button:hover {
-  background-color: var(--accent-color);
+  background-color: #01a66f6b;
   transform: scale(1.05);
+  color: white;
 }
 
 .payment-details {
@@ -515,7 +518,9 @@ th {
   border-radius: 5px;
   margin-bottom: 15px;
 }
-
+.input-cash:hover{
+  background-color:#333;
+}
 .complete-payment-button {
   background-color: var(--background-primary);
   color: var(--text-primary);
@@ -524,11 +529,13 @@ th {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .complete-payment-button:hover {
-  background-color: #2980b9;
+  background-color: #01a66f6b;
+  transform: scale(1.05);
+  color: white;
 }
 
 .change-amount {

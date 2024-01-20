@@ -3,6 +3,8 @@ import HomeImg from "../images/menu.png";
 import { Link } from "react-router-dom";
 import {motion} from 'framer-motion';
 
+
+
 export default function Home() {
   return (
     <div className="homepage">
@@ -19,7 +21,6 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            //whileHover={{ scale: 1.1, transition: { duration: 0 } }} 
             className="ordernow-btn"
           >
             Order Now

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MyOrder from "./MyOrder";
 import { motion } from "framer-motion";
+import { animateScroll as scroll } from "react-scroll";
 
 
 import Pepperoni from "../images/pepperoni.png";
@@ -74,7 +75,6 @@ const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
 const Menu = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [showMyOrder, setShowMyOrder] = useState(false);
-  
 
   const addToOrder = (item) => {
     const existingItem = selectedItems.find(
@@ -109,6 +109,14 @@ const Menu = () => {
 
   const toggleMyOrder = () => {
     setShowMyOrder(!showMyOrder);
+  
+    if (!showMyOrder) {
+      // Scroll to the MyOrder component
+      scroll.scrollToBottom({
+        duration: 800, // adjust the duration as needed
+        smooth: "easeInOutQuad",
+      });
+    }
   };
 
   const categories = ["Pizza", "Pasta", "Burger", "Drinks", "Dessert"];
