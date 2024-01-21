@@ -28,7 +28,7 @@ import IceCream from "../images/ice-cream.png";
 
 
 const MenuItem = ({ item, selectedItems, updateQuantity, addToOrder }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [setIsHovered] = useState(false);
 
   const handleHover = () => {
     setIsHovered(true);

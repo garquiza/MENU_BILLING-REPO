@@ -33,7 +33,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.8 }}
           className="image-content"
         >
-          <img src={HomeImg} alt="Description of the image" />
+          <img src={HomeImg} alt="Home" />
         </motion.div>
       </div>
     </div>
