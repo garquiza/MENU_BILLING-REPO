@@ -7,6 +7,54 @@
   --accent-color: #ff7e67;
   --accent-hover: #ff594f;  
 }
+/* For WebKit browsers (Chrome, Safari) */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #01a66f6b; /* Adjusted to match the specified color */
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Adjusted background color */
+}
+
+/* Optional: Hover styles for the scrollbar thumb in WebKit */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #006e51; /* Adjusted hover color */
+}
+
+/* For Firefox */
+* {
+  scrollbar-color: #01a66f6b #f5f5f5; /* Adjusted colors */
+}
+
+/* Optional: Hover styles for the scrollbar thumb in Firefox */
+* {
+  scrollbar-color: #006e51 #f5f5f5; /* Adjusted hover color */
+}
+
+/* For Microsoft Edge and Internet Explorer */
+*::-ms-scrollbar {
+  width: 10px;
+}
+
+*::-ms-scrollbar-thumb {
+  background-color: #01a66f6b; /* Adjusted to match the specified color */
+  border-radius: 5px;
+}
+
+*::-ms-scrollbar-track {
+  background-color: #f5f5f5; /* Adjusted background color */
+}
+
+/* Optional: Hover styles for the scrollbar thumb in Edge */
+*::-ms-scrollbar-thumb:hover {
+  background-color: #006e51; /* Adjusted hover color */
+}
+
 
 * {
   box-sizing: border-box;
